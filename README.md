@@ -2,26 +2,28 @@
 
 ## Team Details
 
-**Section:** 7
+Section: 7
 
-**Team:** 14
+Team: 14
 
-### Members
+Members:
 - Ramisetty Samshritha (2520030045)
 - Gundla Laxmi Sri (2520030264)
 
 ## Project Description
 
-This project is a Linux terminal-based file management system developed in C using Linux system calls. It performs file operations through file descriptors.
+This project is a Linux terminal-based file management system developed in C using Linux system calls. It performs basic file operations using file descriptors.
 
 ## Features
-- Create File
-- Write File
-- Read File
-- Append File
-- Copy File
+
+1. Create File
+2. Write File
+3. Read File
+4. Append File
+5. Copy File
 
 ## Linux APIs Used
+
 - open()
 - read()
 - write()
