@@ -1,4 +1,2 @@
 Operating System Project
-Team 14
-Linux File Descriptor Demo
-
+Team 14 Linux File Descriptor Demo
