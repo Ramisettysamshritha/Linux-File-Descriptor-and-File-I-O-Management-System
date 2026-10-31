@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Files | FileFlow</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body class="app-page">
+
+    <aside class="sidebar">
+        <a href="dashboard.html" class="logo">FileFlow</a>
+
+        <nav>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="operations.html">File Operations</a>
+            <a href="files.html" class="active">My Files</a>
+            <a href="profile.html">My Profile</a>
+        </nav>
+
+        <button onclick="logout()" class="logout-btn">Logout</button>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="page-heading">
+            <h1>My Files</h1>
+            <p>View and manage all your stored files.</p>
+        </header>
+
+        <section class="file-summary">
+            <div class="summary-card">
+                <h3>Total Files</h3>
+                <p id="totalFiles">0</p>
+            </div>
+
+            <div class="summary-card">
+                <h3>Total Storage Used</h3>
+                <p id="totalStorage">0 Bytes</p>
+            </div>
+        </section>
+
+        <section class="files-container">
+
+           <div class="files-header">
+    <h2>📁 Stored Files</h2>
+    <button id="refreshFiles" class="primary-btn">
+        ↻ Refresh Files
+    </button>
+</div>
+            <div class="table-wrapper">
+                <table class="files-table">
+                    <thead>
+                        <tr>
+                            <th>File Name</th>
+                            <th>Size</th>
+                            <th>Created At</th>
+                            <th>Last Updated</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="fileTableBody">
+                        <tr>
+                            <td colspan="4">Loading files...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p id="emptyMessage" class="empty-message" hidden>
+                No files found. Create your first file!
+            </p>
+
+        </section>
+
+        <section class="terminal-panel">
+            <div class="terminal-header">
+                <span class="terminal-dot"></span>
+                <span class="terminal-dot"></span>
+                <span class="terminal-dot"></span>
+                <strong>Directory Output</strong>
+            </div>
+
+            <div id="directoryOutput" class="terminal-output">
+                <p>FileFlow directory listing.</p>
+            </div>
+        </section>
+
+        <a href="operations.html" class="back-link">
+            ← Back to File Operations
+        </a>
+
+    </main>
+
+    <script src="js/auth.js"></script>
+    <script src="js/file-manager.js"></script>
+    <script src="js/files.js"></script>
+
+    <script>
+        requireLogin();
+    </script>
+
+</body>
+</html>

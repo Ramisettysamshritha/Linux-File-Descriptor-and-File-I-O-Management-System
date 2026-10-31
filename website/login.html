@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | FileFlow</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body class="auth-page">
+
+    <div class="auth-container">
+        <a href="index.html" class="logo">FileFlow</a>
+
+        <div class="auth-card">
+            <h1>Welcome Back!</h1>
+            <p>Login to continue managing your files.</p>
+
+            <form id="loginForm">
+                <label for="loginEmail">Email Address</label>
+                <input type="email" id="loginEmail" placeholder="Enter your email" required>
+
+                <label for="loginPassword">Password</label>
+                <input type="password" id="loginPassword" placeholder="Enter your password" required>
+
+                <button type="submit" class="primary-btn">Login</button>
+                <p id="loginMessage" class="message"></p>
+            </form>
+
+            <p class="auth-switch">
+                Don't have an account?
+                <a href="signup.html">Sign Up</a>
+            </p>
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+</body>
+</html>

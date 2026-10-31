@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | FileFlow</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body class="app-page">
+
+    <aside class="sidebar">
+        <a href="dashboard.html" class="logo">FileFlow</a>
+
+        <nav>
+            <a href="dashboard.html" class="active">Dashboard</a>
+            <a href="operations.html">File Operations</a>
+            <a href="files.html">My Files</a>
+            <a href="profile.html">My Profile</a>
+        </nav>
+
+        <button onclick="logout()" class="logout-btn">Logout</button>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="dashboard-header">
+            <div>
+                <h1 id="welcomeMessage">Welcome to FileFlow!</h1>
+                <p>Manage your files easily from one place.</p>
+            </div>
+            <a href="profile.html" class="profile-link">My Profile</a>
+        </header>
+
+        <section class="welcome-card">
+            <h2>Your File Management Workspace</h2>
+            <p>Create, read, write, append, copy and delete files with ease.</p>
+            <a href="operations.html" class="dashboard-button">
+                Start Managing Files
+            </a>
+        </section>
+
+        <h2 class="section-heading">File Operations</h2>
+
+        <section class="operation-grid">
+
+            <a href="operations.html# create" class="operation-card">
+                <span>📄</span>
+                <h3>Create File</h3>
+                <p>Create a new file.</p>
+            </a>
+
+            <a href="operations.html#write" class="operation-card">
+                <span>✏️</span>
+                <h3>Write File</h3>
+                <p>Add or overwrite file content.</p>
+            </a>
+
+            <a href="operations.html#read" class="operation-card">
+                <span>📖</span>
+                <h3>Read File</h3>
+                <p>View saved file content.</p>
+            </a>
+
+            <a href="operations.html#append" class="operation-card">
+                <span>➕</span>
+                <h3>Append File</h3>
+                <p>Add content to an existing file.</p>
+            </a>
+
+            <a href="operations.html#copy" class="operation-card">
+                <span>📋</span>
+                <h3>Copy File</h3>
+                <p>Make a copy of a file.</p>
+            </a>
+
+            <a href="operations.html#delete" class="operation-card">
+                <span>🗑️</span>
+                <h3>Delete File</h3>
+                <p>Remove a saved file.</p>
+            </a>
+
+            <a href="files.html" class="operation-card">
+                <span>📁</span>
+                <h3>View Files</h3>
+                <p>See all your stored files.</p>
+            </a>
+
+            <a href="#" onclick="logout(); return false;" class="operation-card">
+                <span>🚪</span>
+                <h3>Exit</h3>
+                <p>Logout from FileFlow.</p>
+            </a>
+
+        </section>
+
+        <footer class="dashboard-footer">
+            FileFlow — Linux File Descriptor and File I/O Management System
+        </footer>
+
+    </main>
+
+    <script src="js/auth.js"></script>
+    <script>
+        requireLogin();
+
+        const user = getCurrentUser();
+
+        if (user) {
+            document.getElementById("welcomeMessage").textContent =
+                "Welcome, " + user.name + "!";
+        }
+    </script>
+
+</body>
+</html>

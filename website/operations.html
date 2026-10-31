@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Operations | FileFlow</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body class="app-page">
+
+    <aside class="sidebar">
+        <a href="dashboard.html" class="logo">FileFlow</a>
+
+        <nav>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="operations.html" class="active">File Operations</a>
+            <a href="files.html">My Files</a>
+            <a href="profile.html">My Profile</a>
+        </nav>
+
+        <button onclick="logout()" class="logout-btn">Logout</button>
+    </aside>
+
+    <main class="main-content">
+        <header class="page-heading">
+            <h1>File Operations</h1>
+            <p>Choose an operation to manage your files.</p>
+        </header>
+
+        <section class="operation-menu">
+            <button class="operation-tab active" data-operation="create">1. Create</button>
+            <button class="operation-tab" data-operation="write">2. Write</button>
+            <button class="operation-tab" data-operation="read">3. Read</button>
+            <button class="operation-tab" data-operation="append">4. Append</button>
+            <button class="operation-tab" data-operation="copy">5. Copy</button>
+            <button class="operation-tab" data-operation="delete">6. Delete</button>
+            <a class="operation-tab" href="files.html">7. View Files</a>
+            <button class="operation-tab" id="exitButton">8. Exit</button>
+        </section>
+
+        <section class="operation-panel">
+
+            <!-- CREATE -->
+            <form class="operation-form active" id="createForm" data-panel="create">
+                <h2>Create File</h2>
+                <p>Create a new empty file in FileFlow.</p>
+
+                <label for="createName">File Name</label>
+                <input type="text" id="createName" placeholder="example.txt" required>
+
+                <button type="submit" class="primary-btn">Create File</button>
+            </form>
+
+            <!-- WRITE -->
+            <form class="operation-form" id="writeForm" data-panel="write">
+                <h2>Write File</h2>
+                <p>Write new content or overwrite existing content.</p>
+
+                <label for="writeName">File Name</label>
+                <input type="text" id="writeName" placeholder="example.txt" required>
+
+                <label for="writeContent">File Content</label>
+                <textarea id="writeContent" rows="5" placeholder="Enter your content..." required></textarea>
+
+                <button type="submit" class="primary-btn">Write Content</button>
+            </form>
+
+            <!-- READ -->
+            <form class="operation-form" id="readForm" data-panel="read">
+                <h2>Read File</h2>
+                <p>Display the content of a saved file.</p>
+
+                <label for="readName">File Name</label>
+                <input type="text" id="readName" placeholder="example.txt" required>
+
+                <button type="submit" class="primary-btn">Read File</button>
+            </form>
+
+            <!-- APPEND -->
+            <form class="operation-form" id="appendForm" data-panel="append">
+                <h2>Append File</h2>
+                <p>Add new content at the end without removing existing content.</p>
+
+                <label for="appendName">File Name</label>
+                <input type="text" id="appendName" placeholder="example.txt" required>
+
+                <label for="appendContent">Content to Append</label>
+                <textarea id="appendContent" rows="5" placeholder="Enter additional content..." required></textarea>
+
+                <button type="submit" class="primary-btn">Append Content</button>
+            </form>
+
+            <!-- COPY -->
+            <form class="operation-form" id="copyForm" data-panel="copy">
+                <h2>Copy File</h2>
+                <p>Copy the content of one file into a new file.</p>
+
+                <label for="sourceName">Source File Name</label>
+                <input type="text" id="sourceName" placeholder="original.txt" required>
+
+                <label for="destinationName">New File Name</label>
+                <input type="text" id="destinationName" placeholder="copy.txt" required>
+
+                <button type="submit" class="primary-btn">Copy File</button>
+            </form>
+
+            <!-- DELETE -->
+            <form class="operation-form" id="deleteForm" data-panel="delete">
+                <h2>Delete File</h2>
+                <p>Permanently remove a file from FileFlow storage.</p>
+
+                <label for="deleteName">File Name</label>
+                <input type="text" id="deleteName" placeholder="example.txt" required>
+
+                <button type="submit" class="primary-btn danger-btn">Delete File</button>
+            </form>
+
+        </section>
+
+        <section class="terminal-panel">
+            <div class="terminal-header">
+                <span class="terminal-dot"></span>
+                <span class="terminal-dot"></span>
+                <span class="terminal-dot"></span>
+                <strong>FileFlow Terminal</strong>
+            </div>
+
+            <div id="terminalOutput" class="terminal-output" aria-live="polite">
+                <p>Welcome to FileFlow Terminal.</p>
+                <p>Select an operation to get started.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="js/auth.js"></script>
+    <script src="js/file-manager.js"></script>
+    <script src="js/operations.js"></script>
+
+    <script>
+        requireLogin();
+    </script>
+
+</body>
+</html>
